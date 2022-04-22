@@ -9,7 +9,7 @@ insert_final_newline = false
 trim_trailing_whitespace = true
 
 [*.ts]
-quote_type = single
+quote_type = duple # single
 
 [*.md]
 max_line_length = off
