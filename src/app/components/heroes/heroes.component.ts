@@ -11,7 +11,7 @@ import { Hero } from "../../shared/models/hero";
 export class HeroesComponent implements OnInit {
   hero: Hero = {
     id: 1,
-    name: "Windstorm",
+    name: "Wi",
   };
 
   constructor() {}
