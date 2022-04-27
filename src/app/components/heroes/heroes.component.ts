@@ -10,13 +10,13 @@ import { HEROES } from "./../../shared/models/mock-heroes";
   styleUrls: ["./heroes.component.scss"],
 })
 export class HeroesComponent implements OnInit {
-
   heroes = HEROES;
-  
+
   selectedHero?: Hero;
 
   constructor() {}
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {}
 
   onSelect(hero: Hero): void {

@@ -8,11 +8,12 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 // New Components
-import { ToolbarComponent } from "./components/toolbar/toolbar.component";
 import { HeroesComponent } from "./components/heroes/heroes.component";
 import { FormsModule } from "@angular/forms";
+
+import { HeroDetailsComponent } from "./components/hero-details/hero-details.component";
 @NgModule({
-  declarations: [AppComponent, ToolbarComponent, HeroesComponent],
+  declarations: [AppComponent, HeroesComponent, HeroDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
