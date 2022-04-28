@@ -14,20 +14,5 @@
     </li>
   </ul>
 
-  <div class="card-hero" *ngIf="selectedHero">
-    <h2>{{ selectedHero.name | uppercase }} Details</h2>
-
-    <div>id: {{ selectedHero.id }}</div>
-
-    <div>
-      <label for="hero-name"
-        >Hero name:
-        <input
-          id="hero-name"
-          [(ngModel)]="selectedHero.name"
-          placeholder="name"
-        />
-      </label>
-    </div>
-  </div>
+  <app-hero-details [hero]="selectedHero"></app-hero-details>
 </div>

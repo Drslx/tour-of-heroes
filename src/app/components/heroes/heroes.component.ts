@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 // Models interface
 import { Hero } from "../../shared/models/hero";
-import { HEROES } from "./../../shared/models/mock-heroes";
+import { HEROES } from "../../shared/models/mock-heroes";
 
 @Component({
   selector: "app-heroes",
@@ -10,8 +10,8 @@ import { HEROES } from "./../../shared/models/mock-heroes";
   styleUrls: ["./heroes.component.scss"],
 })
 export class HeroesComponent implements OnInit {
+  /* Dados mockadosnod */
   heroes = HEROES;
-
   selectedHero?: Hero;
 
   constructor() {}
