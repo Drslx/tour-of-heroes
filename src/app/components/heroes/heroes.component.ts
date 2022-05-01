@@ -15,7 +15,8 @@ import { HeroService } from "../../service/hero.service";
   styleUrls: ["./heroes.component.scss"],
 })
 export class HeroesComponent implements OnInit {
-  /* Dados mockadosnod */
+  title = "My Heroes";
+  /* Dados mockados */
   //  heroes = HEROES;
 
   heroes: Hero[] = [];
@@ -29,12 +30,20 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
+  // Metodo do botao
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
 
-  // Metodo para recuperar os heroes do servico
-  getHeroes(): void {
+  // Metodo para recuperar os heroes do servico / sincrono
+  /*   getHeroes(): void {
     this.heroes = this.heroService.getHeroes();
+  } */
+
+  // Metodo assincrono
+  getHeroes(): void {
+    this.heroService
+      .getHeroes()
+      .subscribe((heroes) => (this.heroes = this.heroes));
   }
 }

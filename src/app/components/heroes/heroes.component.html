@@ -1,4 +1,4 @@
-<h2>My Heroes</h2>
+<h2>{{ title }}</h2>
 
 <div class="card">
   <ul class="heroes">
@@ -14,5 +14,6 @@
     </li>
   </ul>
 
+  <!-- Component filho que sera mostrado ao ser chamado o metodo -->
   <app-hero-details [hero]="selectedHero"></app-hero-details>
 </div>
