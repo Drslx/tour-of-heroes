@@ -8,6 +8,8 @@ import { Hero } from "../../shared/models/hero";
 
 // Service
 import { HeroService } from "../../service/hero.service";
+import { MessageService } from '../../service/message.service';
+
 
 @Component({
   selector: "app-heroes",
@@ -19,11 +21,11 @@ export class HeroesComponent implements OnInit {
   /* Dados mockados */
   //  heroes = HEROES;
 
-  heroes: Hero[] = [];
   selectedHero?: Hero;
+  heroes: Hero[] = [];
 
   /* Injecao do servico */
-  constructor(private heroService: HeroService) {}
+  constructor(private heroService: HeroService, private messageService: MessageService) {}
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class HeroesComponent implements OnInit {
   // Metodo do botao
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.messageService.add(`HeoresComponent: Selected hero id=${hero.id}`)
   }
 
   // Metodo para recuperar os heroes do servico / sincrono
@@ -44,6 +47,6 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroService
       .getHeroes()
-      .subscribe((heroes) => (this.heroes = this.heroes));
+      .subscribe((heroes) => (this.heroes = heroes));
   }
 }
